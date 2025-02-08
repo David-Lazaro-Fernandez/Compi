@@ -80,7 +80,7 @@ export function HeroSection() {
             </div>
           </div>
           <div className="relative h-[400px] lg:h-[600px] flex items-center justify-center">
-            <Image src="/landing/compi.png" alt="Seguro de auto" width={500} height={500} className="object-contain" priority />
+            <Image src="/landing/Compi.png" alt="Seguro de auto" width={500} height={500} className="object-contain" priority />
           </div>
         </div>
       </div>
