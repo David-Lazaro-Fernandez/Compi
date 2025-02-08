@@ -29,7 +29,7 @@ export default async function OnboardingLayout({
         <nav className="relative">
           <div className="absolute left-3 top-0 h-full w-px bg-gray-200" />
 
-          {steps.map((step, index) => (
+          {steps.map((step) => (
             <div key={step.name} className="relative mb-8">
               <div
                 className={`absolute left-0 h-6 w-6 rounded-full border-2 ${
