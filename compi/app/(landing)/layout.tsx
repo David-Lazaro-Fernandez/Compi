@@ -1,12 +1,8 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import "../globals.css"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import type React from "react" // Added import for React
-
-const inter = Inter({ subsets: ["latin"] })
+import type React from "react"
 
 export const metadata: Metadata = {
   title: "CompiSeguros - Compara y encuentra el mejor seguro de auto",
@@ -21,13 +17,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+    <>
+      <Navbar />
+      <main className="flex min-h-screen flex-col">{children}</main>
+      <Footer />
+    </>
   )
 }
 

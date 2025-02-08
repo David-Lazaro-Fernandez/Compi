@@ -1,5 +1,5 @@
 "use client"
-
+import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { Menu } from 'lucide-react'
 import { Button } from "@/components/ui/button"
@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/sheet"
 
 export function Navbar() {
+  const router = useRouter()
   return (
     <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-sm z-50 border-b">
       <div className="container mx-auto px-4">
@@ -36,7 +37,7 @@ export function Navbar() {
               Contacto
             </Link>
             <ThemeToggle />
-            <Button>Cotiza tu Seguro</Button>
+            <Button onClick={() => router.push("/onboarding/welcome")}>Cotiza tu Seguro</Button>
           </div>
 
           {/* Tablet/Mobile Menu */}
