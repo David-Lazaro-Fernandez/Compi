@@ -1,18 +1,38 @@
 import Image from "next/image"
 
+const partners = [
+  {
+    name: "GNP",
+    image: "/placeholder.svg"
+  },
+  {
+    name: "Qualitas",
+    image: "/placeholder.svg"
+  },
+  {
+    name: "AXA",
+    image: "/placeholder.svg"
+  },
+  {
+    name: "HDI",
+    image: "/placeholder.svg"
+  }
+]
+
 export function Partners() {
   return (
     <section className="py-12 bg-background">
       <div className="container mx-auto px-4">
         <p className="text-center text-lg mb-8">Trabajamos con las mejores aseguradoras</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="relative h-12 w-full max-w-[200px]">
+          {partners.map((partner) => (
+            <div key={partner.name} className="w-[200px] h-[80px] relative">
               <Image
-                src="/placeholder.svg"
-                alt={`Aseguradora ${i}`}
+                src={partner.image}
+                alt={partner.name}
                 fill
-                className="object-contain filter grayscale hover:grayscale-0 transition-all"
+                className="object-contain"
+                sizes="200px"
               />
             </div>
           ))}
@@ -20,5 +40,4 @@ export function Partners() {
       </div>
     </section>
   )
-}
-
+} 
